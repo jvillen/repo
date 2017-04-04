@@ -7,9 +7,9 @@ RUN a2enmod rewrite headers ssl
 
 RUN a2dismod status
 
-RUN ln -sf /dev/stdout /var/log/apache2/access.log
-
 RUN ln -sf /dev/stderr /var/log/apache2/error.log
+
+RUN ln -sf /dev/stdout /var/log/apache2/access.log
 
 ENTRYPOINT ["apachectl", "-D", "FOREGROUND"]
 
